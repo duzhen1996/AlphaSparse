@@ -43,7 +43,7 @@ Configure AlphaSparse according to the environment. Go to `global_config.json`. 
 "spmv_header_file": "{path to AlphaSparse}/spmv_header_top.code"
 ```
 
-Set the permission of the shell script that compiles generated SpMV codes.
+Set the permission of the shell script that compiles generated SpMV codes. And check the command "nvcc" can be called correctly.
 
 ```
 chmod 700 cuda_code/make_template.sh
