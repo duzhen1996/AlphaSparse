@@ -43,6 +43,12 @@ Configure AlphaSparse according to the environment. Go to `global_config.json`. 
 "spmv_header_file": "{path to AlphaSparse}/spmv_header_top.code"
 ```
 
+Set the permission of the shell script that compiles generated SpMV codes.
+
+```
+chmod 700 cuda_code/make_template.sh
+```
+
 Prepare the input matrix. Go to the directory of UF dataset. Extract the zipped file of specific matrix. And convert the `.mtx` file.
 
 ```
