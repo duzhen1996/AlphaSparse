@@ -1541,13 +1541,13 @@ string code_of_main_function(code_builder_t *code_builder, unsigned long kernal_
         return_str = return_str + code_of_kernal_function_call(code_builder->template_vec[dense_block_id], code_builder->template_type_vec[dense_block_id], dense_block_id);
     }
 
-    // 加入一个同步函数
-    return_str = return_str + "\ncudaDeviceSynchronize();\n";
-
     if (kernal_repeat != 1)
     {
         return_str = return_str + "}\n";
     }
+
+    // 加入一个同步函数
+    return_str = return_str + "\ncudaDeviceSynchronize();\n";
 
     // 这里看情况加一个计时函数
     if (perf_test == true)
@@ -1659,13 +1659,15 @@ string code_of_main_function(code_builder_t *code_builder, vector<int> sub_matri
         return_str = return_str + code_of_kernal_function_call(code_builder->template_vec[sub_matrix_id], code_builder->template_type_vec[sub_matrix_id], sub_matrix_id);
     }
 
-    // 加入一个同步函数
-    return_str = return_str + "\ncudaDeviceSynchronize();\n";
+    
 
     if (kernal_repeat != 1)
     {
         return_str = return_str + "}\n";
     }
+
+    // 加入一个同步函数
+    return_str = return_str + "\ncudaDeviceSynchronize();\n";
 
     // 这里看情况加一个计时函数
     if (perf_test == true)
